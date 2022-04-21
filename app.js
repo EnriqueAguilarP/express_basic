@@ -18,10 +18,17 @@ app.get('/launchx', (req, res) => {
 })
 
 //regresar un objeto
-//localhost:3000/exploresInNode
+//localhost:3000/explorersInNode
 app.get('/explorersInNode', (req, res) => {
     const explorer = {name: 'explorer', msg: 'Hello'}
     res.send(explorer)
+})
+
+//QueryParams: recibir parametros por la url
+//http://localhost:3000/explorers/enrique
+//req.params = {"explorerName": "enrique"}
+app.get('/explorers/:explorerName', (req, res) => {
+    res.send(req.params)
 })
 
 //Inicializar esta app
